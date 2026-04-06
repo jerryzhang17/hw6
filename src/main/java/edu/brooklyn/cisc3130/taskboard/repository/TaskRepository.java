@@ -30,7 +30,7 @@ public interface TaskRepository extends JpaRepository<Task, Integer> { // Provid
     List<Task> findByCompletedAndPriority(Boolean completed, Task.Priority priority);
     
     // Custom query using JPQL
-    @Query("SELECT t FROM Task t WHERE t.title LIKE %:keyword% OR t.description LIKE %:keyword%") // Custom SQL/JPQL queries
+    @Query("SELECT t FROM Task t WHERE LOWER(t.title) LIKE LOWER(CONCAT('%', :keyword, '%')) OR LOWER(t.description) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Task> searchTasks(@Param("keyword") String keyword);
     
     // Paginated query for completed tasks

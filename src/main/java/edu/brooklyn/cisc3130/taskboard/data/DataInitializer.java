@@ -32,6 +32,41 @@ public class DataInitializer implements CommandLineRunner {
                 null, "Buy groceries", 
                 "Milk, eggs, bread", 
                 true, Task.Priority.LOW, null, null));
+
+            taskRepository.save(new Task(
+                null, "Complete Homework 5",
+                "Finish Spring REST API assignment",
+                true, Task.Priority.HIGH, null, null));
+
+            taskRepository.save(new Task(
+                null, "Read Chapter 6",
+                "Read database chapter in textbook",
+                false, Task.Priority.MEDIUM, null, null));
+
+            taskRepository.save(new Task(
+                null, "Submit Lab Report",
+                "Upload lab report to Blackboard",
+                false, Task.Priority.HIGH, null, null));
+
+            taskRepository.save(new Task(
+                null, "Clean room",
+                "Vacuum and organize desk",
+                true, Task.Priority.LOW, null, null));
+
+            taskRepository.save(new Task(
+                null, "Exercise",
+                "Go to the gym",
+                false, Task.Priority.MEDIUM, null, null));
+
+            taskRepository.save(new Task(
+                null, "Call mom",
+                "Catch up with family",
+                true, Task.Priority.LOW, null, null));
+
+            taskRepository.save(new Task(
+                null, "Review lecture notes",
+                "Go over notes from last class",
+                false, Task.Priority.MEDIUM, null, null));
         }
     }
 }
